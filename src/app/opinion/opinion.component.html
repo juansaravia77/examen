@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-header text-center text-primary">
+        <h5 class="card-title">Registre su Opinon</h5>
+    </div>
+    <div class="card-body">
+      <ul class="list-group">
+        @for (o of opiniones; track o.Id) { 
+            <li class="list-group-item border-info">
+                Autor: {{ o.Nombre }} - {{o.Apellido}}
+                <h5 class="card-title">{{ o.Titulo }}</h5>
+                <p class="card-text">{{ o.Opinion }}.</p>            
+            </li>
+        }
+            <li class="list-group-item border-info">
+                <form>
+                    <input type="hidden" id="IdOpinion" [(ngModel)]="IdOpinion" name="Id" class="form-control" value="{{ NroId }}">
+                    <div class="mb-3 row">
+                        <label for="Nombre" class="form-label col-1">Autor</label>
+                        <div class="col-3">
+                            <input type="text" class="form-control" id="NombreAutor" [(ngModel)]="NombreAutor" name="Nombre" placeholder="escriba Nombre">
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="form-control" id="ApellidoAutor" [(ngModel)]="ApellidoAutor" name="Apellido" placeholder="escriba Apellido">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="Titulo" class="form-label col-1">Titulo</label>
+                        <div class="col-3">
+                            <input type="text" class="form-control col" id="TituloOpinion" [(ngModel)]="TituloOpinion" name="Titulo">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="Opinion" class="form-label col-2">Mensaje/Opinion: </label>
+                      <div class="col-7">
+                        <input type="text" class="form-control" id="OpinionTexto" [(ngModel)]="OpinionTexto" name="Opinion">
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" (click)="addItem()" >Guardar</button>
+                </form>           
+            </li>
+        </ul>
+
+    </div>
+</div>
