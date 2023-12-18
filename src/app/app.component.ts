@@ -25,7 +25,7 @@ import { Opinion } from './db/opiniones.model';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Sitio SCJ';
+  title = 'Reflexiones SCJ';
   persona: Persona = new Persona();
 
   mostrar(){
